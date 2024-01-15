@@ -10,8 +10,11 @@
 - query2.py: Κώδικας για το Ζητούμενο 4
 - query3.py: Κώδικας για το Ζητούμενο 5
 - query4.py: Κώδικας για το Ζητούμενο 6
-- ex7_q3.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query3.py τροποποιημένο. Στο παρόν αρχείο έχει γίνει η προσθήκη γραμμών '''crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_REPLICATE_NL").join(revgecoding_df, ['LAT', 'LON'], 'inner')
-crimes_zip_joined.explain()'''
+- ex7_q3.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query3.py τροποποιημένο. Στο παρόν αρχείο έχει γίνει η προσθήκη γραμμών
+```python
+crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_REPLICATE_NL").join(revgecoding_df, ['LAT', 'LON'], 'inner')
+crimes_zip_joined.explain()
+```
 - ex7_q4.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query4.py τροποποιημένο (προσθήκη 
 
 
