@@ -3,7 +3,7 @@
 
 ## Φάκελοι
 
-### code 
+### (1) code 
 Περιλαμβάνει τον κώδικα που υλοποιήσαμε για την εργασία. 
 - dataframe.py: Κώδικας για το Ζητούμενο 2 > Εδώ, γίνεται ανάγνωση του βασικού Σετ Δεδομένων (Los Angeles Crime Data), δημιουργείται το schema με τους κατάλληλους τύπους δεδομένων για κάθε στήλη και χρησιμοποιώντας αυτό το βασικό μας DataFrame. Μετά την αφαίρεση των διπλότυπων (drop duplicates), αποθηκεύουμε το DataFrame σε .parquet file για γρήγορη ανάγνωση.
 - query1.py: Κώδικας για το Ζητούμενο 3
@@ -44,7 +44,7 @@ spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1")
 spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
 ```
 
-### data
+### (2) data
 Περιλαμβάνει τα δεδομένα που χρησιμοποιήθηκαν.
 - Crime_Data_from_2010_to_2019.csv
 - Crime_Data_from_2020_to_Present.csv
@@ -52,11 +52,11 @@ spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
 - LA_income_2015.csv
 - revgecoding.csv
 
-### files 
+### (3) files 
 Περιλαμβάνει το .pdf αρχείο εκφώνησης της εργασίας.
 
 ## Εκτέλεση κώδικα
 Για να τρέξουμε τα .py αρχεία (έστω filename.py), επιλέγουμε αριθμό Spark executors (έστω n) και εκτελούμε την παρακάτω γραμμή κώδικα:
 ```bash
-spark-submit --num-executors <n> --conf spark.log.level=WARN <filename.py>
+spark-submit --num-executors <n> --conf spark.log.level=WARN <filename.py>
 ```
