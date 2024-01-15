@@ -15,7 +15,7 @@
 crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_REPLICATE_NL").join(revgecoding_df, ['LAT', 'LON'], 'inner')
 crimes_zip_joined.explain()
 ```
-οι οποίες αντιστοιχούν στη μέθοδο **Shuffle Replicate NL**. Για τις μεθόδους Broadcast Join, Merge Join και Shuffle Hash Join απλά αλλάζουμε αυτές τις γραμμές κώδικα, ως εξής:
+οι οποίες αντιστοιχούν στη μέθοδο **Shuffle Replicate NL**. Για τις μεθόδους Broadcast Join, Merge Join και Shuffle Hash Join πρέπει απλά να αλλάξουμε αυτές τις γραμμές κώδικα, ως εξής:
 
 **Broadcast Join**
 ```python
@@ -33,11 +33,30 @@ crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_HUSH").join(revgecoding_df,['LAT'
 crimes_zip_joined.explain()
 ```
 
-- ex7_q4.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query4.py τροποποιημένο (προσθήκη 
-
+- ex7_q4.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query4.py τροποποιημένο. Στο παρόν αρχείο έχει γίνει η προσθήκη γραμμών
+```python
+spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1")
+spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
+```
+οι οποίες αντιστοιχούν στη μέθοδο **Merge Join**. Για τη μέθοδο **Broadcast Join** πρέπει απλά να αλλάξουμε αυτές τις γραμμές κώδικα, ως εξής:
+```python
+spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1")
+spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
+```
 
 ### data
 Περιλαμβάνει τα δεδομένα που χρησιμοποιήθηκαν.
+- Crime_Data_from_2010_to_2019.csv
+- Crime_Data_from_2020_to_Present.csv
+- LAPD_Police_Stations.csv
+- LA_income_2015.csv
+- revgecoding.csv
 
 ### files 
-Περιλαμβάνει το pdf αρχείο εκφώνησης της εργασίας
+Περιλαμβάνει το .pdf αρχείο εκφώνησης της εργασίας.
+
+## Εκτέλεση κώδικα
+Για να τρέξουμε τα .py αρχεία (έστω filename.py), επιλέγουμε αριθμό Spark executors (έστω n) και εκτελούμε την παρακάτω γραμμή κώδικα:
+```bash
+spark-submit --num-executors <n> --conf spark.log.level=WARN <filename.py>
+```
