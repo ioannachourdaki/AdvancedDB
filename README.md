@@ -15,7 +15,8 @@
 crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_REPLICATE_NL").join(revgecoding_df, ['LAT', 'LON'], 'inner')
 crimes_zip_joined.explain()
 ```
-οι οποίες αντιστοιχούν στη μέθοδο **Shuffle Replicate NL**. Για τις μεθόδους Broadcast Join, Merge Join και Shuffle Hash Join τροποποιήσαμε κάθε φορά αυτές τις γραμμές κώδικα, ως εξής:
+οι οποίες αντιστοιχούν στη μέθοδο **Shuffle Replicate NL**. Για τις μεθόδους Broadcast Join, Merge Join και Shuffle Hash Join απλά αλλάζουμε αυτές τις γραμμές κώδικα, ως εξής:
+
 **Broadcast Join**
 ```python
 crimes_zip_joined=crime_df_trunc.join(broadcast(revgecoding_df), ['LAT','LON'], 'inner')
