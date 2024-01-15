@@ -53,7 +53,9 @@ spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
 - revgecoding.csv
 
 ### (3) files 
-Περιλαμβάνει το .pdf αρχείο εκφώνησης της εργασίας.
+Περιλαμβάνει τα .pdf αρχεία της εργασίας.
+- **advanced_db_project_en.pdf**: Εκφώνηση της εργασίας
+- **Report.pdf:** Αναφορά της εργασίας
 
 ## Εκτέλεση κώδικα
 Για να τρέξουμε τα .py αρχεία (έστω filename.py), επιλέγουμε αριθμό Spark executors (έστω n) και εκτελούμε την παρακάτω γραμμή κώδικα:
