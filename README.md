@@ -15,6 +15,23 @@
 crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_REPLICATE_NL").join(revgecoding_df, ['LAT', 'LON'], 'inner')
 crimes_zip_joined.explain()
 ```
+οι οποίες αντιστοιχούν στη μέθοδο **Shuffle Replicate NL**. Για τις μεθόδους Broadcast Join, Merge Join και Shuffle Hash Join τροποποιήσαμε κάθε φορά αυτές τις γραμμές κώδικα, ως εξής:
+**Broadcast Join**
+```python
+crimes_zip_joined=crime_df_trunc.join(broadcast(revgecoding_df), ['LAT','LON'], 'inner')
+crimes_zip_joined.explain()
+```
+**Merge Join**
+```python
+crimes_zip_joined=crime_df_trunc.hint("MERGE").join(revgecoding_df, ['LAT','LON'], 'inner')
+crimes_zip_joined.explain()
+```
+**Shuffle Hash Join**
+```python
+crimes_zip_joined=crime_df_trunc.hint("SHUFFLE_HUSH").join(revgecoding_df,['LAT','LON'], 'inner')
+crimes_zip_joined.explain()
+```
+
 - ex7_q4.py: Κώδικας για το Ζητούμενο 7 > Περιλαμβάνει τον κώδικα του query4.py τροποποιημένο (προσθήκη 
 
 
