@@ -79,7 +79,7 @@ GROUP BY Year
 ORDER BY Year
 """
 
-#(SELECT /*+ BROADCAST(p) */ * FROM Precincts p)
+#INNER JOIN (SELECT /*+ BROADCAST(p) */ * FROM Precincts p) p ON c.AREA = p.PREC
 
 query4a1_df = spark.sql(query4a1)
 query4a1_df.show()
