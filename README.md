@@ -40,8 +40,7 @@ spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
 ```
 οι οποίες αντιστοιχούν στη μέθοδο **Merge Join**. Για τη μέθοδο **Broadcast Join** πρέπει απλά να αλλάξουμε αυτές τις γραμμές κώδικα, ως εξής:
 ```python
-spark.conf.set("spark.sql.autoBroadcastJoinThreshold", "-1")
-spark.conf.set("spark.sql.join.preferSortMergeJoin", "true")
+INNER JOIN (SELECT /*+ BROADCAST(p) */ * FROM Precincts p) p ON c.AREA = p.PREC
 ```
 
 ### (2) data
