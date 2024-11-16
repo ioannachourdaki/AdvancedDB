@@ -1,10 +1,10 @@
 # Advanced Topics in Database Systems - Semester Project
-This semester project focuses on the analysis of large datasets using data science techniques. Specifically, we processed Crime Record data for Los Angeles from 2010 to the present, sourced from the publicly available United States government data repository. The project includes seven distinct tasks, with the corresponding implementations provided in this repository.
+This Semester Project focuses on the analysis of large datasets using data science techniques. Specifically, we processed Crime Record data for Los Angeles from 2010 to the present, sourced from the publicly available United States government data repository. The Project includes seven distinct tasks, with the corresponding implementations provided in this repository.
 
 ## Folders
 
 ### (1) code 
-It contains the code we implemented for this project.
+It contains the code we implemented for this Project.
 - **dataframe.py:** Code for Task 2 > In this step, the Los Angeles Crime Data is loaded, and the schema is defined with the appropriate data types for each column. Using this schema, we create the initial DataFrame. After eliminating any duplicate entries, the DataFrame is saved as a .parquet file to ensure efficient and fast data retrieval.
 - **query1.py:** Code for Task 3
 - **query2.py:** Code for Task 4
@@ -54,7 +54,7 @@ It contains the datasets used.
 
 ### (3) files 
 It contains the .pdf files of this Project.
-- **advanced_db_project_en.pdf**: Assignment Brief
+- **advanced_db_Project_en.pdf**: Assignment Brief
 - **Report.pdf:** Project Report (in Greek)
 
 ## Code Execution
