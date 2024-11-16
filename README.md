@@ -54,8 +54,8 @@ It contains the datasets used.
 
 ### (3) files 
 It contains the .pdf files of this Project.
-- **advanced_db_project_en.pdf**: Εκφώνηση της εργασίας
-- **Report.pdf:** Αναφορά της εργασίας
+- **advanced_db_project_en.pdf**: Assignment Brief
+- **Report.pdf:** Project Report
 
 ## Code Execution
 To execute the .py files (e.g. filename.py), we first choose the number of Spark executors (e.g. n) and run the code below:
