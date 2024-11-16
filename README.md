@@ -1,4 +1,5 @@
 # Advanced Topics in Database Systems - Semester Project
+
 This Semester Project focuses on the analysis of large datasets using data science techniques. Specifically, we processed Crime Record data for Los Angeles from 2010 to the present, sourced from the publicly available United States government data repository. The Project includes seven distinct tasks, with the corresponding implementations provided in this repository.
 
 ## Folders
